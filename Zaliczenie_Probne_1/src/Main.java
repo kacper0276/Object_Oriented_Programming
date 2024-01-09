@@ -18,11 +18,13 @@ public class Main {
                 new Song("AA", "DSADA", 15)
         };
 
-        List<Song> songsList = Arrays.asList(songs);
-        System.out.println(songsList);
-        songsList.sort(new ArtistTitleComparator());
-        songsList.sort(new DurationComparator());
-        for(Song song: songsList) {
+//        List<Song> songsList = Arrays.asList(songs);
+//        System.out.println(songsList);
+        Arrays.sort(songs, new ArtistTitleComparator());
+        Arrays.sort(songs, new DurationComparator());
+//        songsList.sort(new ArtistTitleComparator());
+//        songsList.sort(new DurationComparator());
+        for(Song song: songs) {
             System.out.println(song.getArtist() + " " + song.getTitle() + " " + song.getDuration());
         }
 
