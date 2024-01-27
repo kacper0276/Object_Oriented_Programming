@@ -8,7 +8,7 @@ public class FootballPlayer implements Cloneable {
 
     public FootballPlayer(String name, int[] goals) {
         this.name = name;
-        this.goals = goals != null ? goals : new int[5];
+        this.goals = goals != null ? goals.clone() : new int[5];
     }
 
     @Override
