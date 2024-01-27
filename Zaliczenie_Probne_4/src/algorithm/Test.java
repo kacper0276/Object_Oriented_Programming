@@ -4,16 +4,13 @@ import java.util.HashMap;
 
 public class Test {
     public static void main(String[] args) {
-        HashMap<String, Integer> hashMap = new HashMap<String, Integer>();
+        HashMap<Person, Integer> hashMap = new HashMap<>();
 
-        hashMap.put("Klucz", 10);
-        hashMap.put("Klucz", 15);
-        hashMap.put("Klucz1", 132);
-        hashMap.put("DSADA", 122);
-        hashMap.put("Klucz", 12);
-        hashMap.put("Inny", 100);
+        hashMap.put(new Person("Alice"), 1);
+        hashMap.put(new Person("Bob"), 2);
+        hashMap.put(new Person("Alice"), 3);
 
-        int res = ClassTest.countUniqueKeys(hashMap);
-        System.out.println(res);
+        int result = ClassTest.countUniqueKeys(hashMap);
+        System.out.println(result);
     }
 }

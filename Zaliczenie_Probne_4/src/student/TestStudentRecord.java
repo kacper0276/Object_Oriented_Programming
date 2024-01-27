@@ -2,7 +2,7 @@ package student;
 
 public class TestStudentRecord {
     public static void main(String[] args) {
-        StudentRecord studentRecord = new StudentRecord("Imie", "1", 3.3);
+        StudentRecord studentRecord = new StudentRecord("Imie", "1", 4.1);
         StudentRecord studentRecord1 = new StudentRecord("Imie 1","15", 4);
 
         studentRecord1.printDetails();
