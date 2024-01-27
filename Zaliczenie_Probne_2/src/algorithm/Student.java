@@ -3,8 +3,8 @@ package algorithm;
 import java.util.Objects;
 
 public class Student {
-    String name;
-    float grade;
+    private String name;
+    private float grade;
 
     @Override
     public boolean equals(Object o) {
@@ -13,6 +13,19 @@ public class Student {
         Student student = (Student) o;
 
         return this.name.equals(student.name) && this.grade == student.grade;
+    }
+
+    public Student(String name, float grade) {
+        this.name = name;
+        this.grade = grade;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public float getGrade() {
+        return grade;
     }
 
     @Override
