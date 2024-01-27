@@ -10,8 +10,7 @@ public class TestSong {
           new Song("BA", "CC", 10)
         };
 
-        Arrays.sort(songs, new ArtistTitleComparator());
-        Arrays.sort(songs, new DurationComparator());
+        Arrays.sort(songs, new DurationComparator().thenComparing(new ArtistTitleComparator()));
 
         for(Song s: songs) {
             System.out.println(s.title + " " + s.artist + " " + s.duration);

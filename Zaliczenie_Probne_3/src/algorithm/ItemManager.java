@@ -1,10 +1,15 @@
 package algorithm;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class ItemManager <T>{
-    private List<T> list = new ArrayList<>();
+    private ArrayList<T> list;
+
+    {
+        list = new ArrayList<>();
+    }
 
     public void addItem(T item) {
         list.add(item);

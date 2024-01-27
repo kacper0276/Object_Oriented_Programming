@@ -2,7 +2,7 @@ package notmod;
 
 import java.util.Objects;
 
-public class InmutablePoint {
+public final class InmutablePoint {
     private final int x, y, z;
 
     public InmutablePoint(int x, int y, int z) {
