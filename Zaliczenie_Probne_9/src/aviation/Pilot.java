@@ -8,7 +8,7 @@ public class Pilot implements Cloneable{
 
     public Pilot(String name, ArrayList<Double> flightHours) {
         this.name = name;
-        this.flightHours = flightHours != null ? flightHours : new ArrayList<>();
+        this.flightHours = flightHours != null ? new ArrayList<>(flightHours) : new ArrayList<>();
     }
 
     @Override
@@ -22,25 +22,11 @@ public class Pilot implements Cloneable{
         flightHours.set(3, el);
     }
 
-    public static void main(String[] args) {
-        ArrayList<Double> arr = new ArrayList<>();
-        arr.add(19.1);
-        arr.add(10.0);
-        arr.add(9.1);
-        arr.add(2.1);
+    public String getName() {
+        return name;
+    }
 
-        try {
-            Pilot pilot = new Pilot("Imie", arr);
-            Pilot pilot1 = null;
-            pilot1 = pilot.clone();
-            pilot.changeThirdEl(69);
-
-            System.out.println(pilot.flightHours);
-            System.out.println(pilot1.flightHours);
-
-        } catch (CloneNotSupportedException ex) {
-            System.out.println(ex);
-        }
-
+    public ArrayList<Double> getFlightHours() {
+        return flightHours;
     }
 }

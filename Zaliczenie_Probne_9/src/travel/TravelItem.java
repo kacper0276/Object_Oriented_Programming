@@ -18,18 +18,15 @@ public class TravelItem implements Comparable<TravelItem>{
         return Double.compare(this.weight, o.weight);
     }
 
-    public static void main(String[] args) {
-        TravelItem[] arr = new TravelItem[] {
-                new TravelItem("Imie", 5, 1),
-                new TravelItem("Inne", 2, 15),
-                new TravelItem("Inne imie", 15, 8),
-                new TravelItem("Jeszcze inne", 1, 1)
-        };
+    public String getName() {
+        return name;
+    }
 
-        Arrays.sort(arr);
+    public double getWeight() {
+        return weight;
+    }
 
-        for(var el: arr) {
-            System.out.println(el.name + "  " + el.weight);
-        }
+    public double getVolume() {
+        return volume;
     }
 }
