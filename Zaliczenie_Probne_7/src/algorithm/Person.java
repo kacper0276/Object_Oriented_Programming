@@ -1,7 +1,7 @@
 package algorithm;
 
-public class Person {
-    String name;
+public class Person implements Comparable<Person>{
+    private String name;
 
     public Person(String name) {
         this.name = name;
@@ -15,13 +15,23 @@ public class Person {
         return name.equals(person.name);
     }
 
+    public String getName() {
+        return name;
+    }
+
     @Override
     public int hashCode() {
-        return name.hashCode();
+        int res = name != null ? name.hashCode() : 0;
+        return res;
     }
 
     @Override
     public String toString() {
         return name;
+    }
+
+    @Override
+    public int compareTo(Person o) {
+        return this.name.compareTo(o.name);
     }
 }

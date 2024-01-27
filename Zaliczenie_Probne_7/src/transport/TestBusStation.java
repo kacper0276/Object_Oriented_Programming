@@ -1,8 +1,10 @@
 package transport;
 
+import java.util.ArrayList;
+
 public class TestBusStation {
     public static void main(String[] args) {
-        BusStation localStation = new BusStation("Local Station", "City A");
+        BusStation localStation = new BusStation("Local Station", "City A", new ArrayList<>());
         localStation.addBus("Bus1");
         localStation.addBus("Bus2");
 
@@ -13,7 +15,7 @@ public class TestBusStation {
         System.out.println("After removing Bus1:");
         System.out.println(localStation);
 
-        IntercityBusStation intercityStation = new IntercityBusStation("Intercity Station", "City B", 5);
+        IntercityBusStation intercityStation = new IntercityBusStation("Intercity Station", "City B", new ArrayList<>(), 5);
         intercityStation.addBus("BusX");
         intercityStation.addBus("BusY");
 

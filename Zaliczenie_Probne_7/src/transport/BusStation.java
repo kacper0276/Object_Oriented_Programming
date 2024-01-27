@@ -7,10 +7,10 @@ public class BusStation {
     private String name, city;
     private ArrayList<String> buses;
 
-    public BusStation(String name, String city) {
+    public BusStation(String name, String city, ArrayList<String> buses) {
         this.name = name;
         this.city = city;
-        this.buses = new ArrayList<>();
+        this.buses = buses != null ? new ArrayList<>(buses) : new ArrayList<>();
     }
 
     public String getName() {
@@ -62,6 +62,9 @@ public class BusStation {
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, city, buses);
+        int hash = name != null ? name.hashCode() : 0;
+        hash = 31 * hash + (city != null ? city.hashCode() : 0);
+        hash = 31 * hash + (buses != null ? buses.hashCode() : 0);
+        return hash;
     }
 }

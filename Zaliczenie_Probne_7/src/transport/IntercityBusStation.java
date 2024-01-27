@@ -1,12 +1,13 @@
 package transport;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 public class IntercityBusStation extends BusStation{
     private int numberOfPlatforms;
 
-    public IntercityBusStation(String name, String city, int numberOfPlatforms) {
-        super(name, city);
+    public IntercityBusStation(String name, String city, ArrayList<String> buses, int numberOfPlatforms) {
+        super(name, city, buses);
         this.numberOfPlatforms = numberOfPlatforms;
     }
 
@@ -30,17 +31,16 @@ public class IntercityBusStation extends BusStation{
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
         IntercityBusStation that = (IntercityBusStation) o;
-        return numberOfPlatforms == that.numberOfPlatforms &&
-                Objects.equals(getName(), that.getName()) &&
-                Objects.equals(getCity(), that.getCity()) &&
-                Objects.equals(getBuses(), that.getBuses());
+        return this.numberOfPlatforms == that.numberOfPlatforms;
+
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getName(), getCity(), getBuses(), numberOfPlatforms);
+        int hash = super.hashCode();
+        hash = 31 * hash + this.numberOfPlatforms;
+        return hash;
     }
 }
