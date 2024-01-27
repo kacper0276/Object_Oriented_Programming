@@ -31,17 +31,15 @@ public class VinylStore extends MusicStore{
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
         VinylStore that = (VinylStore) o;
-        return numberOfVinyls == that.numberOfVinyls &&
-                Objects.equals(getName(), that.getName()) &&
-                Objects.equals(getCity(), that.getCity()) &&
-                Objects.equals(getAlbums(), that.getAlbums());
+        return this.numberOfVinyls == that.numberOfVinyls;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getName(), getCity(), getAlbums(), numberOfVinyls);
+        int hash = super.hashCode();
+        hash = 31 * hash + this.numberOfVinyls;
+        return hash;
     }
 }

@@ -11,7 +11,8 @@ public class TestAthlete {
         arr.add(new Athlete("Imie2", "Sport2", 2000));
         arr.add(new Athlete("Imie3", "Sport3", 1900));
 
-        Collections.sort(arr);
+//        Collections.sort(arr);
+          arr.sort(null);
 
         for(var athlete: arr) {
             System.out.println(athlete.name() + " " + athlete.yearOfAchievement());

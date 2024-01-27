@@ -9,7 +9,7 @@ public class MusicStore {
     public MusicStore(String name, String city, ArrayList<String> albums) {
         this.name = name;
         this.city = city;
-        this.albums = albums;
+        this.albums = albums != null ? new ArrayList<>(albums) : new ArrayList<>();
     }
 
     public String getName() {
@@ -33,7 +33,7 @@ public class MusicStore {
     }
 
     public void setAlbums(ArrayList<String> albums) {
-        this.albums = albums;
+        this.albums = albums != null ? new ArrayList<>(albums) : new ArrayList<>();
     }
 
     public void addAlbum(String album) {
@@ -68,6 +68,9 @@ public class MusicStore {
     // Przesłonięta metoda hashCode
     @Override
     public int hashCode() {
-        return Objects.hash(name, city, albums);
+        int result = name != null ? name.hashCode() : 0;
+        result = 31 * result + (city != null ? city.hashCode() : 0);
+        result = 31 * result + (albums != null ? albums.hashCode() : 0);
+        return result;
     }
 }
