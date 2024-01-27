@@ -7,7 +7,7 @@ public class Hospital {
 
     public Hospital(String name, double capacity) {
         this.name = name == null ? "" : name;
-        this.capacity = capacity < 0 ? 50.0 : capacity;
+        this.capacity = capacity <= 0 ? 50.0 : capacity;
     }
 
     public String getName() {
@@ -58,4 +58,9 @@ public class Hospital {
 
         return result;
     }
+
+//    @Override
+//    public int hashCode() {
+//        return Objects.hash(capacity, name);
+//    }
 }

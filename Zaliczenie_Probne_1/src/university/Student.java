@@ -3,8 +3,8 @@ package university;
 import java.util.Objects;
 
 public class Student {
-    public String name;
-    public double grade;
+    private String name;
+    private double grade;
 
     public Student(String name, double grade) {
         this.name = name;
@@ -17,6 +17,14 @@ public class Student {
         if (obj == null || getClass() != obj.getClass()) return false;
         Student student = (Student) obj;
         return Double.compare(student.grade, grade) == 0 && name.equals(student.name);
+    }
+
+    @Override
+    public String toString() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", grade=" + grade +
+                '}';
     }
 
     @Override

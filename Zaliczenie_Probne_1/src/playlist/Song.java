@@ -1,8 +1,8 @@
 package playlist;
 
 public class Song {
-    String title, artist;
-    int duration;
+    private String title, artist;
+    private int duration;
 
     public Song(String title, String artist, int duration) {
         this.title = title;
