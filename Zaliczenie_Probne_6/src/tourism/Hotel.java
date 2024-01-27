@@ -31,7 +31,7 @@ public class Hotel implements Cloneable {
     }
 
     @Override
-    protected Object clone() throws CloneNotSupportedException {
-        return super.clone();
+    protected Hotel clone() throws CloneNotSupportedException {
+        return (Hotel) super.clone();
     }
 }

@@ -8,7 +8,10 @@ public class TestClass {
             throw new IllegalArgumentException("HashMapa nie może być pusta");
         }
 
-        return hashMap.get(key);
+        if(hashMap.containsKey(key)) {
+            return hashMap.get(key);
+        }
+        return null;
     }
 
     public static void main(String[] args) {

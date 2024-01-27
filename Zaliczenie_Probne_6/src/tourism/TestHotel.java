@@ -10,8 +10,8 @@ public class TestHotel {
         System.out.println("Hotel 2: " + originalHotel2);
 
         try {
-            Hotel clonedHotel1 = (Hotel) originalHotel1.clone();
-            Hotel clonedHotel2 = (Hotel) originalHotel2.clone();
+            Hotel clonedHotel1 = originalHotel1.clone();
+            Hotel clonedHotel2 = originalHotel2.clone();
 
             originalHotel1.setName("Nowy Hotel A");
 

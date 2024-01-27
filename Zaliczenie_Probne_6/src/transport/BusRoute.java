@@ -11,12 +11,11 @@ public record BusRoute(String routeNumber, String startLocation, String endLocat
         return routeNumber.length() > 4;
     }
 
-    @Override
-    public String toString() {
-        return "BusRoute{" +
+    public void printDetails() {
+        System.out.println("BusRoute{" +
                 "routeNumber='" + routeNumber + '\'' +
                 ", startLocation='" + startLocation + '\'' +
                 ", endLocation='" + endLocation + '\'' +
-                '}';
+                '}');
     }
 }
