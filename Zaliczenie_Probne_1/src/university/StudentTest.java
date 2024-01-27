@@ -1,13 +1,15 @@
 package university;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class StudentTest {
-    public static <T> int countElements(Iterable<T> items, Object element) {
+    public static <T> int countElements(Iterator<T> items, Object element) {
         int count = 0;
 
-        for (T item : items) {
-            if (item != null && item.equals(element)) {
+        while(items.hasNext()) {
+            T current = items.next();
+            if(current != null && current.equals(element)) {
                 count++;
             }
         }
@@ -21,8 +23,8 @@ public class StudentTest {
         students.add(new Student("Nazwa", 10));
         students.add(new Student("Nazwa", 15));
 
-        Iterable<Student> iterable = students;
-        int res = StudentTest.countElements(iterable, new Student("Nazwa", 10));
+        Iterator<Student> iterator = students.iterator();
+        int res = StudentTest.countElements(iterator, new Student("Nazwa", 10));
         System.out.println("Liczba wystąpień studenta ['Nazwa'] [10] to: " + res);
     }
 }
