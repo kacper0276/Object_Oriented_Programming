@@ -2,18 +2,7 @@ package checking;
 
 public class Klasa {
     public static <T> boolean containsDuplicates(T el1, T el2, T el3) {
-        int i = 0;
-        if(el1.equals(el2)) {
-            i++;
-        }
-        if(el1.equals(el3)) {
-            i++;
-        }
-        if(el2.equals(el3)) {
-            i++;
-        }
-
-        return i > 0 ? true : false;
+        return el1.equals(el2) || el1.equals(el3) || el2.equals(el3);
     }
 
     public static void main(String[] args) {
