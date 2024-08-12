@@ -22,12 +22,12 @@ To set up the project locally:
 
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/kacper0276/Programowanie_Obiektowe.git
+    git clone https://github.com/kacper0276/Object_Oriented_Programming.git
     ```
 
 2. **Navigate to the project directory**:
     ```bash
-    cd Programowanie_Obiektowe
+    cd Object_Oriented_Programming
     ```
 
 3. **Compile the Java code**:
